@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" href="pic/icon.ico">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=0.5, maximum-scale=2.0, user-scalable=yes" /> 
+    <title>2023!:新年的钟声即将敲响</title>
+    <link rel="stylesheet" type="text/css" href="css/common.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
+    <!-- Optional: include a polyfill for ES6 Promises for IE11 and Android browser -->
+    <script src="https://cdn.jsdelivr.net/npm/promise-polyfill"></script>
+    <audio src="music/spring.mp3" loop="loop" preload="auto" autoplay="autoplay"></audio>
+    <script src="js/common.js"></script>
+    <style>
+        button {
+        background-color: rgba(18, 235, 36, 0.253); /* Green */
+        border: none;
+        color: white;
+        padding: 15px 32px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        margin: 4px 2px;
+        cursor: pointer;
+        -webkit-transition-duration: 0.4s; /* Safari */
+        transition-duration: 0.4s;
+    }
+    button:hover {
+        box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
+        background-color: white;
+        color:#4CAF50;
+    }
+     .glass {
+        backdrop-filter: blur(4px);
+        border-radius: 12px;
+    }
+    </style>
+    <script>
+        if(CookieCheck() != 1)ScreenWidth();
+    </script>
+</head>    
+<body style="background-image: linear-gradient(to right, deeppink, orange);position: relative;margin-right:0px;">
+    <main>
+        <script>
+            //获取屏幕宽高
+        var windowWidth = window.screen.width;
+        var windowHeight = window.screen.height;
+        //创建雪花
+        function createSnow(){
+            var left = 0;
+            var top = 0;
+            //定义一个初始化随机数,使雪花在屏幕中
+            var left_random = Math.random() * windowWidth;
+            var top_random = Math.random()* windowHeight;
+            var div = document.createElement('div');
+            div.className = 'snow';
+            div.style.transform = 'scale('+(Math.random())+')'
+ 
+            document.body.appendChild(div);
+ 
+            //雪花飘落
+            setInterval(function () {
+ 
+                div.style.left = left_random + left +'px';
+                div.style.top = top_random + top +'px'
+                left += 0.2;
+                top += 0.2;
+ 
+                //如果雪花跑到屏幕外面了,让雪花重新返回屏幕顶部
+                if(left_random + left >= windowWidth){
+                    left_random = Math.random();
+                    left = 0;
+                }
+ 
+                if(top_random + top >= windowHeight){
+                    top_random = Math.random();
+                    top = 0;
+                }
+            },10)
+        }
+        for(var i = 0 ; i < 200 ; i++){
+            createSnow();
+        }
+        </script>
+        <div class="container">
+            <p style="background-color:rgba(17, 0, 255, 0.226);position:absolute;top:0px;width:999999999999999999px;height:60px;"><h2 style="text-align:center" id="hitokoto">
+                <a title="点按以查看详情" href="#" id="hitokoto_text" valign="top" style="position: relative;margin-top:0px;margin-right:0px;color:white">Tips:所谓发扬带英精神，乃为好用就往死里用。。。</a>
+            --[一言]</h2> </p>  
+            <script>
+                fetch('https://v1.hitokoto.cn')
+                  .then(response => response.json())
+                  .then(data => {
+                    const hitokoto = document.querySelector('#hitokoto_text')
+                    hitokoto.href = `https://hitokoto.cn/?uuid=${data.uuid}`
+                    hitokoto.innerText = data.hitokoto
+                  })
+                  .catch(console.error)
+              </script>
+            <h1 style="position: absolute;top:0px;"><div class="topclick" >
+                    <div class="ltbox1" title="杂鱼♥杂鱼♥~">AwqJerry1594</div>
+                    <ul class="ltbox2">
+                        <li class="li1"><a href="main.html" title="20,2233!">主页面</a></li>
+                        <li><a href="helpdoc.docx" title="可是并不能吃掉！">帮助文档</a></li>
+                        <li><a href="music.html" title="无论你发生了什么，相信我，我们都在。">网抑云音乐</a></li>
+                        <li><a href="https://awqj1594.github.io/Arsene/main.html" title="七夕节写网页什么的最讨厌了~">至暗时刻回顾</a></li>
+                        <li><a href="trans.html" title="什么？不应该直接放APP内打开嘛？">手机页面</a></li>
+                    </ul>
+                </div></h1>
+            </div>   
+        <div class="main-content">
+              <h2 style="text-align:center;vertical-align:middle!important;margin-top:100px;">你好！同志！时光如落花流水般再也不回头.<br>你是否，在这其中学到了什么？</h2>
+            <p style="text-align:center"><progress id='progress1' value="0" max="100">如果加载无误，这里会有一个进度条.jpg(详见帮助手册)
+            </progress><br>
+            <button style="backdrop-filter: blur(4px);border-radius: 12px;" onclick="start_run()">查询2022进度条(以旧历算)</button></p>
+            <script>
+                function sleep(time){
+                    var timeStamp = new Date().getTime();
+                    var endTime = timeStamp + time;
+                    while(true){
+                        if (new Date().getTime() > endTime){
+                        return;
+                        }
+                    }
+                }
+            function start_run(){
+                var progress1 = document.getElementById("progress1");
+                progress1.value = 0;
+                var date = new Date();
+                var d = (date.getDate()+343)/365*100;
+                var m = date.getmonth;
+                var y =date.getFullYear();
+                if((m > 1 || date.getDate() > 22) && y == 2023){
+                    alert("什么？你居然还想查2023对于2022年的事？"+"\n"+"嘿，你别说，你还真别说。我早就料到有屑人会来卡bug了！");
+                }
+                if(date.getHours() >= 18 && d == 100){
+                   alert("真的来了！2023！"+ "\n我也曾仰望天上的星星，当他们降落到我身边时我才明白那是流星。");
+                   window.location.href="thetruth.html"; 
+                }
+                for(var i = 0;i <= d;i++){
+                    progress1.value++;
+                    sleep(10);
+                }
+                // <!--日，getDay是获得当前星期几（0-6），getDate是获得当前日期-->
+            }    
+            </script>
+        </div>
+        <div class="footer">
+            <div class="mod_copyright" style="background-color:slategrey;position: fixed;bottom:0px;">
+                <div class="links">
+                    <a onclick="supr_alert(1)">了解我更多！</a>|
+                    <a onclick="supr_alert(1)">[广告位招租]黄金版位.jpg</a>|
+                    <a onclick="supr_alert(2)">我的个人主页(半死亡)</a>
+                    <img src="pic/i_f16.png" title="彩蛋！">
+                </div>
+                <div class="copyright">
+                    Copyright © 1145-1919,No right saved.
+                    "学下北泽，就从一个一个先辈开始！"<br>
+                    AresenewithQuiteLonely_Jerry.
+                 </div>
+        </div>
+        </div>
+    </main>
+</body>

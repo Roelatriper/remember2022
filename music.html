@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" href="pic/icon.ico" >
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <link rel="stylesheet" type="text/css" href="css/common.css"> -->
+    <title>2023!:网抑云：一个小电台（确信</title>
+    <style>
+        textarea, select, input, a, label{
+            text-decoration: none;
+            font-family: Arial, Helvetica, sans-serif;
+            color: #333;
+        }
+        footer{
+            position:absolute;
+            bottom:0px;
+            height:100%;
+            backdrop-filter: blur(4px);
+            border-radius: 12px;
+            text-align:center;
+        }
+        
+  
+
+    .ltbox1 {
+        width: 160px;
+        height: 50px;
+        backdrop-filter: blur(4px);
+        border-radius: 12px;
+        background-color: pink;
+        text-align: center;
+        line-height: 50px;
+        cursor: pointer;        /*鼠标指针经过*/
+    }
+    .ltbox2{
+        width: 150px;
+        height: 300px;
+        margin-top: 2px;
+        border-radius: 10px;
+        background-color: rgb(255, 255, 255);
+        z-index: 9;
+        position:absolute;
+        display: none;        /*使下拉菜单栏消失*/
+    }
+     
+    .li1{
+        margin-top: 5px;
+    }
+    .ltbox2 li{
+        height: 40px;
+        width: 150px;
+        text-align: center;
+        line-height: 40px;
+        display: block;        /*使下拉菜单栏显示*/
+    }
+    .ltbox2 li:hover{
+        background-color:#E8E8E8;
+    }
+     
+    .topclick:hover .ltbox2{
+        display: block;
+    }    
+
+    </style>
+    <audio src="music/world_news.mp3" preload="auto" autoplay="autoplay"></audio>
+    <audio src="music/cloudmusic/Ah! Ca ira.flac" loop="loop" preload="auto" autoplay="autoplay"></audio>
+    <script src="js/common.js"></script>
+</head>
+<body style="background-image: linear-gradient(to right, deeppink, orange);">
+    <main>
+    <script>
+        //获取屏幕宽高
+        var windowWidth = window.screen.width;
+        var windowHeight = window.screen.height;
+        //创建雪花
+        function createSnow(){
+            var left = 0;
+            var top = 0;
+            //定义一个初始化随机数,使雪花在屏幕中
+            var left_random = Math.random() * windowWidth;
+            var top_random = Math.random()* windowHeight;
+            var div = document.createElement('div');
+            div.className = 'snow';
+            div.style.transform = 'scale('+(Math.random())+')'
+ 
+            document.body.appendChild(div);
+ 
+            //雪花飘落
+            setInterval(function () {
+ 
+                div.style.left = left_random + left +'px';
+                div.style.top = top_random + top +'px'
+                left += 0.2;
+                top += 0.2;
+ 
+                //如果雪花跑到屏幕外面了,让雪花重新返回屏幕顶部
+                if(left_random + left >= windowWidth){
+                    left_random = Math.random();
+                    left = 0;
+                }
+ 
+                if(top_random + top >= windowHeight){
+                    top_random = Math.random();
+                    top = 0;
+                }
+            },10)
+        }
+        for(var i = 0 ; i < 200 ; i++){
+            createSnow();
+        }
+    </script>
+    <div class="header">
+        <p style="background-color:rgba(0, 0, 0, 0.349);position:absolute;top:0px;width:999999999999999999px;height:60px;"></p>
+        <h1 style="text-align:right;position:absolute;top:0px;"><img src="pic/RC.jpg" style="height:50px;">&nbsp;&nbsp;&nbsp;<a href="music.html" style="margin-top:0px;">网抑云音乐（电台.jpg）</a></h1>
+        <h3 style="position: absolute;top:0px;left:450px;"><div class="topclick" >
+            <div class="ltbox1" title="杂鱼♥杂鱼♥~">AwqJerry1594</div>
+            <ul class="ltbox2">
+                <li class="li1"><a href="main.html" title="20,2233!">主页面</a></li>
+                <li><a href="helpdoc.docx" title="可是并不能吃掉！">帮助文档</a></li>
+                <li><a href="music.html" title="无论你发生了什么，相信我，我们都在。">网抑云音乐</a></li>
+                <li><a href="https://awqj1594.github.io/Arsene/main.html" title="七夕节写网页什么的最讨厌了~">至暗时刻回顾</a></li>
+                <li><a href="trans.html" title="什么？不应该直接放APP内打开嘛？">手机页面</a></li>
+            </ul>
+        </div></h3>
+    </div>
+    </div>
+    <div class="contenter">
+        <div class="box1">
+            <p style="backdrop-filter: blur(4px);border-radius: 12px;position:absolute;margin-top:90px;background-color:rgba(0, 0, 0, 0.349);text-align: center;width: 600px;height:300px;">感谢你的支持!<br>
+            如果你能给我一句辛苦了，那就真的太好了！<br>
+            有关任何帮助，请参考帮助手册。 （或许帮助手册里面藏着许多不为人知的秘密。。。）
+            <br>
+            该页面尚未开发完成，因为我时间并不充裕.jpg<br>
+            不过在未来的设想中，这应该是一个小电台。。。
+            <img src="pic/icon.ico" style="width:60px;height:60px;" title="感谢理解！">
+            </p>
+        </div>
+    </div>
+    <div class="footer">
+        <div class="mod_copyright" style="background-color:slategrey;position: fixed;bottom:0px;">
+            <div class="links">
+                <a onclick="supr_alert(1)">了解我更多！</a>|
+                <a onclick="supr_alert(1)">[广告位招租]黄金版位.jpg</a>|
+                <a onclick="supr_alert(2)">我的个人主页(半死亡)</a>
+                <img src="pic/i_f16.png" title="彩蛋！">
+            </div>
+            <div class="copyright">
+                Copyright © 1145-1919,No right saved.
+                "学下北泽，就从一个一个先辈开始！"<br>
+                AresenewithQuiteLonely_Jerry.
+             </div>
+    </div>
+    </div></main>
+</body>    
